@@ -44,7 +44,7 @@ Não é necessária nenhuma instalação (Node.js, npm, etc). Como o projeto uti
 
 1.  Faça o clone deste repositório:
     ```bash
-    git clone [https://github.com/SEU-USUARIO/portfolio-dev-web.git](https://github.com/SEU-USUARIO/portfolio-dev-web.git)
+    git clone https://github.com/SergioGregorio/sergiogregorio.github.io.git
     ```
 2.  Navegue até a pasta do projeto.
 3.  Abra o arquivo `index.html` em qualquer navegador moderno ou utilize a extensão **Live Server** do VS Code.
@@ -53,8 +53,7 @@ Não é necessária nenhuma instalação (Node.js, npm, etc). Como o projeto uti
 
 Você pode acessar o portfólio rodando diretamente no navegador através do link abaixo:
 
-🔗 **[Acesse o Portfólio Aqui](https://seu-usuario.github.io/portfolio-dev-web)**
-*(Nota: Configure o GitHub Pages nas configurações do repositório)*
+🔗 **[Acesse o Portfólio Aqui](https://github.com/SergioGregorio/sergiogregorio.github.io/)**
 
 ## 📫 Contato
 
