@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas Pro</title>
+    <link rel="stylesheet" href="css/todo.css">
+    <script src="js/todo.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h2>Minhas Tarefas</h2>
+            <p id="dateDisplay">Carregando data...</p>
+        </header>
+
+        <section class="input-area">
+            <input type="text" id="taskInput" placeholder="O que precisa ser feito?" maxlength="50" aria-label="Nova tarefa">
+            <button class="btn-add" id="addBtn" aria-label="Adicionar tarefa">+</button>
+        </section>
+
+        <ul id="taskList"></ul>
+
+        <footer class="footer-info">
+            <span id="pendingCount">0 tarefas pendentes</span>
+            <button class="btn-clear" id="clearBtn">Limpar Tudo</button>
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,197 @@
+/* --- Variáveis e Reset --- */
+:root {
+    --primary: #10b981;       /* Verde Principal */
+    --primary-dark: #059669;
+    --secondary-blue: #3b82f6;
+    --secondary-orange: #f59e0b;
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- Container Principal --- */
+.container {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+/* --- Seção da Esquerda (Inputs) --- */
+.inputs-section {
+    padding: 40px;
+    border-right: 1px solid var(--border-color);
+}
+
+h2 {
+    color: var(--text-main);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper span {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none; /* Permite clicar através do ícone */
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* --- Seção da Direita (Resultados) --- */
+.results-section {
+    padding: 40px;
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 5px solid transparent; /* Base para cor da borda */
+}
+
+/* Modificadores de cor para os cards */
+.card-green { border-left-color: var(--primary); }
+.card-blue { border-left-color: var(--secondary-blue); }
+.card-orange { border-left-color: var(--secondary-orange); }
+
+.result-card small {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.result-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-main);
+    margin-top: 5px;
+}
+
+.result-value.sm-text {
+    font-size: 1.4rem;
+}
+
+.chart-label {
+    margin-top: 10px;
+    color: #666;
+}
+
+/* --- Gráfico --- */
+.chart-container {
+    flex-grow: 1;
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 5px;
+    height: 150px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.bar {
+    flex: 1;
+    background-color: var(--primary);
+    opacity: 0.7;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.bar:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .inputs-section {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}

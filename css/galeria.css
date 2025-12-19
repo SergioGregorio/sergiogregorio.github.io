@@ -1,0 +1,80 @@
+:root {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --accent: #8b5cf6;
+    --accent-hover: #7c3aed;
+    --text-main: #f1f5f9;
+    --text-sec: #94a3b8;
+    --price-color: #38bdf8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background-color: var(--bg); color: var(--text-main); padding-bottom: 50px; }
+
+header { padding: 40px 20px; text-align: center; }
+header h1 {
+    font-size: 2.5rem; margin-bottom: 10px;
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+header p { color: var(--text-sec); max-width: 600px; margin: 0 auto; }
+
+/* Grid Responsivo */
+.gallery-container {
+    max-width: 1200px; margin: 0 auto; padding: 20px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px;
+}
+
+.nft-card {
+    background-color: var(--card-bg); border-radius: 15px; overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.nft-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px var(--accent); }
+
+.img-wrapper { width: 100%; height: 220px; overflow: hidden; }
+.nft-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.nft-card:hover img { transform: scale(1.1); }
+
+.card-content { padding: 20px; }
+.card-content h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.card-content span { color: var(--text-sec); font-size: 0.9rem; }
+
+.card-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);
+}
+.price { color: var(--price-color); font-weight: bold; }
+
+.btn-buy {
+    background-color: var(--accent); color: white; padding: 5px 15px; border-radius: 20px;
+    font-size: 0.8rem; font-weight: bold; transition: background 0.3s;
+}
+
+/* Modal */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85); backdrop-filter: blur(5px);
+    justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s;
+}
+.modal.active { display: flex; opacity: 1; }
+
+.modal-content {
+    background-color: var(--card-bg); padding: 20px; border-radius: 15px;
+    max-width: 500px; width: 90%; text-align: center; position: relative;
+    transform: scale(0.7); transition: transform 0.3s; border: 1px solid var(--accent);
+}
+.modal.active .modal-content { transform: scale(1); }
+
+.modal-img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; }
+.close-btn {
+    position: absolute; top: 10px; right: 15px; color: white; font-size: 2rem;
+    cursor: pointer; line-height: 1; background: none; border: none;
+}
+.highlight-price { color: var(--price-color); margin-bottom: 20px; }
+
+.btn-modal {
+    background: linear-gradient(90deg, var(--accent), var(--price-color));
+    border: none; padding: 12px 30px; color: white; font-weight: bold;
+    border-radius: 5px; cursor: pointer; width: 100%; font-size: 1rem;
+}

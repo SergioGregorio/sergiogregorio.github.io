@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Demo</title>
+    <link rel="stylesheet" href="css/weather.css">
+    <script src="js/weather.js" defer></script>
+</head>
+<body>
+    <main class="card">
+        <h2>Previsão do Tempo</h2>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Digite uma cidade..." spellcheck="false">
+            <button id="searchBtn" aria-label="Buscar cidade">🔍</button>
+        </div>
+
+        <div class="loading" id="loadingMsg">Buscando dados na API...</div>
+        <div class="error" id="errorMsg">Cidade não encontrada!</div>
+
+        <section class="weather-info" id="weatherInfo" aria-live="polite">
+            <span class="weather-icon" id="icon">⛅</span>
+            <h1 class="temp" id="temp">22°C</h1>
+            <h2 class="city" id="cityName">São Paulo</h2>
+            
+            <div class="details">
+                <div class="col">
+                    <small>Umidade</small>
+                    <span id="humidity">64%</span>
+                </div>
+                <div class="col">
+                    <small>Vento</small>
+                    <span id="wind">12 km/h</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

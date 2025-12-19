@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Marketplace</title>
+    <link rel="stylesheet" href="css/galeria.css">
+    <script src="js/galeria.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>CyberArt Gallery</h1>
+        <p>Explore a coleção exclusiva de artes digitais.</p>
+    </header>
+
+    <main class="gallery-container">
+        <article class="nft-card" data-title="Cyber Punk #001" data-price="3.5 ETH" data-img="https://placehold.co/400x400/8b5cf6/white?text=Cyber+Punk">
+            <div class="img-wrapper">
+                <img src="https://placehold.co/400x400/8b5cf6/white?text=Cyber+Punk" alt="NFT Cyber Punk">
+            </div>
+            <div class="card-content">
+                <h3>Cyber Punk #001</h3>
+                <span>@artista_digital</span>
+                <div class="card-footer">
+                    <div class="price">💎 3.5 ETH</div>
+                    <span class="btn-buy">Ver Detalhes</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="nft-card" data-title="Neon City" data-price="2.1 ETH" data-img="https://placehold.co/400x400/ec4899/white?text=Neon+City">
+            <div class="img-wrapper">
+                <img src="https://placehold.co/400x400/ec4899/white?text=Neon+City" alt="NFT Neon City">
+            </div>
+            <div class="card-content">
+                <h3>Neon City</h3>
+                <span>@future_vision</span>
+                <div class="card-footer">
+                    <div class="price">💎 2.1 ETH</div>
+                    <span class="btn-buy">Ver Detalhes</span>
+                </div>
+            </div>
+        </article>
+        
+        </main>
+
+    <div id="nftModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModalBtn" aria-label="Fechar">&times;</button>
+            <img id="modalImg" src="" alt="" class="modal-img">
+            <div class="modal-info">
+                <h2 id="modalTitle">Título</h2>
+                <p>Criado por um artista verificado. Item único na Blockchain.</p>
+                <h3 id="modalPrice" class="highlight-price">0 ETH</h3>
+                <button class="btn-modal" id="buyBtn">Comprar Agora</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

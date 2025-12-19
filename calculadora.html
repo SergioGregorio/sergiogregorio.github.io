@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de juros compostos simples e eficiente.">
+    <title>Calculadora de Juros Compostos</title>
+    
+    <link rel="stylesheet" href="/css/calculadora.css">
+    
+    <script src="/js/calculadora.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <section class="inputs-section">
+            <h2>Simulador de Investimentos</h2>
+            
+            <form id="calcForm">
+                <div class="input-group">
+                    <label for="initial">Capital Inicial</label>
+                    <div class="input-wrapper">
+                        <span>R$</span>
+                        <input type="number" id="initial" value="1000" step="0.01" min="0">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="monthly">Aporte Mensal</label>
+                    <div class="input-wrapper">
+                        <span>R$</span>
+                        <input type="number" id="monthly" value="200" step="0.01" min="0">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="rate">Taxa de Juros (Anual)</label>
+                    <div class="input-wrapper">
+                        <span>%</span>
+                        <input type="number" id="rate" value="12" step="0.01" min="0">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="years">Tempo de Investimento</label>
+                    <div class="input-wrapper">
+                        <span>Anos</span>
+                        <input type="number" id="years" value="5" step="1" min="1">
+                    </div>
+                </div>
+
+                <button type="submit" id="calculateBtn">Calcular Rendimento</button>
+            </form>
+        </section>
+
+        <section class="results-section">
+            
+            <div class="result-card card-green">
+                <small>Valor Total Final</small>
+                <div class="result-value" id="totalValue">R$ 0,00</div>
+            </div>
+
+            <div class="result-card card-blue">
+                <small>Total Investido</small>
+                <div class="result-value sm-text" id="investedValue">R$ 0,00</div>
+            </div>
+
+            <div class="result-card card-orange">
+                <small>Total em Juros</small>
+                <div class="result-value sm-text" id="interestValue">R$ 0,00</div>
+            </div>
+
+            <small class="chart-label">Crescimento Anual:</small>
+            <div class="chart-container" id="chart">
+                </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

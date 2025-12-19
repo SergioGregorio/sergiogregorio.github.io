@@ -1,0 +1,166 @@
+/* --- Variáveis e Reset --- */
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --primary: #f59e0b; /* Laranja (Ação) */
+    --primary-hover: #ffb02e;
+    --secondary: #2563eb; /* Azul */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Imagem de fundo escura com sobreposição (Overlay) */
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://placehold.co/1920x1080/1a1a1a/FFF?text=Tech+Background');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- Conteúdo Principal --- */
+.container {
+    max-width: 800px;
+    width: 100%;
+    animation: fadeIn 1.5s ease;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 span {
+    color: var(--primary);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* --- O Cronômetro --- */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Efeito Glassmorphism */
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 100px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); /* Brilho laranja */
+}
+
+.time-box h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.time-box small {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--primary);
+}
+
+/* --- Formulário de Captura --- */
+.cta-box {
+    background: white;
+    padding: 5px;
+    border-radius: 50px;
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+button {
+    background-color: var(--primary);
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-hover);
+}
+
+.footer-note {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsividade --- */
+@media (max-width: 600px) {
+    h1 { font-size: 2.5rem; }
+    
+    .countdown-container { gap: 10px; }
+    
+    .time-box {
+        min-width: 70px;
+        padding: 10px;
+    }
+    
+    .time-box h2 { font-size: 1.8rem; }
+    
+    .cta-box {
+        flex-direction: column;
+        background: transparent;
+        box-shadow: none;
+        gap: 15px;
+    }
+    
+    input {
+        width: 100%;
+        background: white;
+        text-align: center;
+    }
+    
+    button { width: 100%; }
+}
